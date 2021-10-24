@@ -1,0 +1,34 @@
+﻿<Window x:Class="ArcGauge2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArcGauge2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1000"
+		Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="5"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<local:Gauge Width="700" Height="700" x:Name="gauge"
+					 Title="Turbo boost"
+					 Min="0" Max="80" TickGap="10"
+					 Unit="RPM" TickUnit="x100"/>
+
+		<StackPanel Grid.Column="2">
+			<Button x:Name="btnTickGap10" Click="btnTickGap10_Click">
+				<TextBlock Text="TickGap: 10"/>
+			</Button>
+			<Button x:Name="btnTickGap8" Click="btnTickGap8_Click">
+				<TextBlock Text="TickGap: 8"/>
+			</Button>
+			<Button x:Name="btnTickGap20" Click="btnTickGap20_Click">
+				<TextBlock Text="TickGap: 20"/>
+			</Button>
+		</StackPanel>
+	</Grid>
+</Window>
